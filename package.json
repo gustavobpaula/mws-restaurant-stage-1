@@ -1,0 +1,37 @@
+{
+	"name": "restaurant",
+	"version": "1.0.0",
+	"description": "Restaurant",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/gustavobpaula/mws-restaurant-stage-1.git"
+	},
+	"author": "Gustavo Bento de Paula",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/gustavobpaula/mws-restaurant-stage-1/issues"
+	},
+	"homepage": "https://github.com/gustavobpaula/mws-restaurant-stage-1#readme",
+	"devDependencies": {
+		"@babel/core": "^7.2.2",
+		"@babel/plugin-proposal-object-rest-spread": "^7.0.0",
+		"@babel/polyfill": "^7.0.0",
+		"@babel/preset-env": "^7.1.0",
+		"babel-loader": "^8.0.4",
+		"browser-sync": "^2.26.3",
+		"del": "^3.0.0",
+		"gulp": "^3.9.1",
+		"gulp-clean-css": "^3.10.0",
+		"gulp-load-plugins": "^1.5.0",
+		"gulp-plumber": "^1.2.0",
+		"gulp-sass": "^4.0.2",
+		"gulp-util": "^3.0.8",
+		"hard-source-webpack-plugin": "^0.12.0",
+		"node-sass": "^4.11.0",
+		"vinyl-named": "^1.1.0",
+		"webpack-stream": "^5.1.1"
+	},
+	"dependencies": {
+		"sweetalert2": "^7.28.7"
+	}
+}
