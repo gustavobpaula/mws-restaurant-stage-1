@@ -10,6 +10,7 @@ const
 
 const paths = {
 	scripts: 'js/**/*.js',
+	serviceWorker: 'sw/sw.js',
 	style: 'styles/**/*.scss',
 	html: '*.html',
 
@@ -31,7 +32,12 @@ gulp.task('scripts', () => {
 		.pipe(gulp.dest(`${paths.dest.default}/js`));
 });
 
-
+gulp.task('sw', () => {
+	return gulp.src(getPath('serviceWorker'))
+		.pipe($.plumber())
+		.pipe(named())
+		.pipe(gulp.dest(`${paths.dest.default}`));
+});
 
 gulp.task('clean', () => {
 
@@ -71,9 +77,10 @@ gulp.task('html', function () {
 		.pipe(gulp.dest(paths.dest.default));
 });
 
-gulp.task('watch', ['scripts', 'style', 'html'], () => {
+gulp.task('watch', ['scripts', 'sw', 'style', 'html'], () => {
 
 	gulp.watch(getPath('scripts'), ['scripts']);
+	gulp.watch(getPath('serviceWorker'), ['sw']);
 	gulp.watch(getPath('style'), ['style']);
 	gulp.watch(getPath('html'), ['html']);
 });
