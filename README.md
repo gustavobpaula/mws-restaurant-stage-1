@@ -10,7 +10,7 @@ git clone https://github.com/gustavobpaula/mws-restaurant-stage-1.git
 npm install
 ```
 
-##Rodar projeto
+## Rodar projeto
 ```
 gulp
 ```
