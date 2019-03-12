@@ -13,6 +13,7 @@ const paths = {
 	serviceWorker: 'sw/sw.js',
 	style: 'styles/**/*.scss',
 	html: '*.html',
+	jsonData: 'data/restaurants.json',
 
 	dest: {
 		default: 'build'
@@ -37,6 +38,13 @@ gulp.task('sw', () => {
 		.pipe($.plumber())
 		.pipe(named())
 		.pipe(gulp.dest(`${paths.dest.default}`));
+});
+
+gulp.task('jsonData', () => {
+	return gulp.src(getPath('jsonData'))
+		.pipe($.plumber())
+		.pipe(named())
+		.pipe(gulp.dest(`${paths.dest.default}/data`));
 });
 
 gulp.task('clean', () => {
@@ -77,10 +85,11 @@ gulp.task('html', function () {
 		.pipe(gulp.dest(paths.dest.default));
 });
 
-gulp.task('watch', ['scripts', 'sw', 'style', 'html'], () => {
+gulp.task('watch', ['scripts', 'sw', 'style', 'html', 'jsonData'], () => {
 
 	gulp.watch(getPath('scripts'), ['scripts']);
 	gulp.watch(getPath('serviceWorker'), ['sw']);
+	gulp.watch(getPath('jsonData'), ['jsonData']);
 	gulp.watch(getPath('style'), ['style']);
 	gulp.watch(getPath('html'), ['html']);
 });
